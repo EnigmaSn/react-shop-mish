@@ -12,7 +12,9 @@ const BasketList = (props) => {
   }, 0);
 
   return (
-    <ul className="collection with-header fixed inset-x-1/2 inset-y-1/2 h-fit w-1/2 -translate-x-1/2 -translate-y-1/2 border-none shadow-2xl duration-500 ease-out">
+    <ul
+      className="collection with-header fixed inset-x-1/2 inset-y-1/2 h-fit w-1/2 -translate-x-1/2 -translate-y-1/2
+        border-none shadow-2xl duration-500 ease-out">
       <li className="collection-item active">
         Корзина
         <span onClick={handleBasketShow} className="secondary-content cursor-pointer">
