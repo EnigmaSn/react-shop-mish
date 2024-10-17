@@ -10,7 +10,7 @@ const GoodsItem = (props) => {
   return (
     <>
       <div className="card flex flex-col" id={offerId}>
-        <div className="card-image">
+        <div className="card-image bg-slate-400">
           {displayAssets[0].url === null ? (
             <img src={`https://placehold.co/300x450?text=${displayName}`} alt={displayName} />
           ) : (
