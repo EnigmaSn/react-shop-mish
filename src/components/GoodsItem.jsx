@@ -1,8 +1,15 @@
 const GoodsItem = (props) => {
-  const { mainId, displayName, displayDescription, price, displayAssets } = props;
+  const {
+    offerId,
+    displayName,
+    displayDescription,
+    price,
+    displayAssets,
+    addToBasket = Function.prototype
+  } = props;
   return (
     <>
-      <div className="card flex flex-col" id={mainId}>
+      <div className="card flex flex-col" id={offerId}>
         <div className="card-image">
           {displayAssets[0].url === null ? (
             <img src={`https://placehold.co/300x450?text=${displayName}`} alt={displayName} />
@@ -15,7 +22,17 @@ const GoodsItem = (props) => {
           <p>{displayDescription}</p>
         </div>
         <div className="card-action">
-          <button className="btn">Купить</button>
+          <button
+            className="btn"
+            onClick={() => {
+              addToBasket({
+                offerId,
+                displayName,
+                price
+              });
+            }}>
+            Купить
+          </button>
           <span className="right text-3xl">{price.finalPrice} руб.</span>
         </div>
       </div>
