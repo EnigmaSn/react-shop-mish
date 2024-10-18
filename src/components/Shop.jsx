@@ -8,21 +8,7 @@ import { Alert } from './Alert';
 import { ShopContext } from '../context';
 
 const Shop = () => {
-  const {
-    isBasketShow,
-    handleBasketShow,
-    goods,
-    isLoading,
-    order,
-    alertName,
-    loadGoods,
-    closeAlert,
-    stopLoading,
-    removeFromBasket,
-    addToBasket,
-    incQuantity,
-    decQuantity
-  } = useContext(ShopContext);
+  const { isBasketShow, isLoading, alertName, loadGoods, stopLoading } = useContext(ShopContext);
 
   useEffect(function getGoods() {
     fetch(API_URL, {
@@ -39,18 +25,10 @@ const Shop = () => {
 
   return (
     <>
-      <Cart quantity={order.length} handleBasketShow={handleBasketShow} />
-      {isLoading ? <Preloader /> : <GoodsList addToBasket={addToBasket} goods={goods} />}
-      {isBasketShow && (
-        <BasketList
-          order={order}
-          handleBasketShow={handleBasketShow}
-          removeFromBasket={removeFromBasket}
-          incQuantity={incQuantity}
-          decQuantity={decQuantity}
-        />
-      )}
-      {alertName && <Alert name={alertName} closeAlert={closeAlert} />}
+      <Cart />
+      {isLoading ? <Preloader /> : <GoodsList />}
+      {isBasketShow && <BasketList />}
+      {alertName && <Alert />}
     </>
   );
 };

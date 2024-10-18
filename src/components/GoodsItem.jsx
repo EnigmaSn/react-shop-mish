@@ -1,12 +1,11 @@
+import { useContext } from 'react';
+import { ShopContext } from '../context';
+
 const GoodsItem = (props) => {
-  const {
-    offerId,
-    displayName,
-    displayDescription,
-    price,
-    displayAssets,
-    addToBasket = Function.prototype
-  } = props;
+  const { offerId, displayName, displayDescription, price, displayAssets } = props;
+
+  const { addToBasket } = useContext(ShopContext);
+
   return (
     <>
       <div className="card flex flex-col" id={offerId}>
