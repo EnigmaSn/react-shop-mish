@@ -5,5 +5,5 @@ import react from '@vitejs/plugin-react-swc';
 export default defineConfig({
   plugins: [react()],
   envDir: './src/envs',
-  base: '/react-shop-mich/'
+  base: '/react-shop-mish/'
 });
