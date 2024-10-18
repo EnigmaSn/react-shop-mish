@@ -1,10 +1,13 @@
 import { Shop } from './Shop';
+import { ContextProvider } from '../context';
 
 const Main = () => {
   return (
     <>
       <main className="content container mx-auto mb-auto p-5">
-        <Shop />
+        <ContextProvider>
+          <Shop />
+        </ContextProvider>
       </main>
     </>
   );
